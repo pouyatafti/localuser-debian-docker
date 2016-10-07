@@ -4,13 +4,13 @@ MAINTAINER Pouya Tafti <pouya@nohup.io>
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-ENV LOCAL_USER=default
+ENV LOCAL_USER=user
 ENV LOCAL_UID=1001
-ENV LOCAL_GROUP=default
+ENV LOCAL_GROUP=group
 ENV LOCAL_GID=1001
 
 # create default group
-RUN groupadd default
+RUN groupadd -g 1000 default
 
 # install os-level pkgs
 RUN apt-get clean && \
